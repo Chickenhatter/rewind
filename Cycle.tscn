@@ -1,3 +1,54 @@
-[gd_scene format=3 uid="uid://degu2d3p2kohg"]
+[gd_scene load_steps=5 format=3 uid="uid://degu2d3p2kohg"]
+
+[ext_resource type="Script" uid="uid://bvr37f80eaale" path="res://Cycle_Character.gd" id="1_3phje"]
+[ext_resource type="Texture2D" uid="uid://d35vsfdvnlk8o" path="res://images/Imagers_sprites/Coin.png" id="1_ejpck"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fg1q5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ejpck")
+}],
+"loop": true,
+"name": &"Coin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"Nothing",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3phje"]
+radius = 20.024984
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Character" type="Node2D" parent="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D/Character"]
+script = ExtResource("1_3phje")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Character/CharacterBody2D"]
+scale = Vector2(0.04, 0.04)
+sprite_frames = SubResource("SpriteFrames_fg1q5")
+animation = &"Coin"
+autoplay = "Coin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Character/CharacterBody2D"]
+shape = SubResource("CircleShape2D_3phje")
+
+[node name="Node2D2" type="Node2D" parent="Node2D"]
+
+[node name="Node2D3" type="Node2D" parent="Node2D"]
+
+[node name="Node2D4" type="Node2D" parent="Node2D"]
+
+[node name="Node2D5" type="Node2D" parent="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
