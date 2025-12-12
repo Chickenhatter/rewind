@@ -34,5 +34,9 @@ func _on_pathers_body_entered(body: Node2D) -> void:
 		v = false
 		c = false
 		$Pocket/Path2D/PathFollow2D.progress = 0
-		$"../Character/CharacterBody2D".global_position = Vector2(5000, -2000)
-		$"../Character/Camera2D".global_position = Vector2(5000, 0)
+		$"../Character/CharacterBody2D".global_position = Vector2(4000, -2000)
+		$"../Character/Camera2D".global_position = Vector2(4672, 0)#4672
+
+
+func _on_huh_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
