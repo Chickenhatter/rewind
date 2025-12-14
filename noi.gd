@@ -27,6 +27,11 @@ func _physics_process(delta: float) -> void:
 			help.x += 1
 		help.y -= 1
 		velocity = help *300
+		if is_on_ceiling():
+			l = true
+			z = false
+			$"../Path2D/PathFollow2D/Camera2D".position = Vector2(0,0)
+			$".".position = Vector2(0,0)
 	move_and_slide()
 
 
@@ -36,3 +41,13 @@ func _on_gfbbggbbr_body_entered(body: Node2D) -> void:
 		z = true
 		$"../Path2D/PathFollow2D/Camera2D".position = Vector2(4000,0)
 		$".".position = Vector2(4000,0)
+
+
+func _on_hbkuxtk_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		get_tree().change_scene_to_file("res://beach.tscn")
+
+
+func _on_area_2_jbbkjbjb_d_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		$AnimatedSprite2D.play("N")
