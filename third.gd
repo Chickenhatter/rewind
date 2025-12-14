@@ -99,3 +99,4 @@ func _on_huh_body_entered(body: Node2D) -> void:
 func _on_stopperfor_4_area_entered(area: Area2D) -> void:
 	if area is Area2D:
 		stopper = true
+		$Node2D.position.y = 1000

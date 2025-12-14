@@ -14,8 +14,8 @@ func _process(delta: float) -> void:
 
 func _on_fourext_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		$"../Character/CharacterBody2D".position = Vector2(14000, 150)
-		$"../Character/Camera2D".position = Vector2(14000, 0)
+		$"../Character/CharacterBody2D".position = Vector2(15000, 150)
+		$"../Character/Camera2D".position = Vector2(16000, 0)
 		v = false
 		
 
@@ -32,16 +32,12 @@ func _on_uub_body_entered(body: Node2D) -> void:
 		$Coins/AnimatedSprite2D.play("N")
 		$Hand_Kill.play("N")
 		$"../Monster/Path2D/PathFollow2D/AnimatedSprite2D".play("default")
+		$"../Third/Node2D".position.y = 10000
 
 
 func _on_huh_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		v = false
-		$"../Monster/Path2D/PathFollow2D".progress = 0
-		$Coins/AnimatedSprite2D.play("Coin")
-		$Hand_Kill.play("Kill")
-		$"../Monster/Path2D/PathFollow2D/AnimatedSprite2D".play("new_animation")
-		$"../Third/Node2D".position.y = 0
+		get_tree().change_scene_to_file("res://resetter_Cycle.tscn")
 
 
 
@@ -53,8 +49,8 @@ func _on_stopperfor_4_area_entered(area: Area2D) -> void:
 	if area is Area2D:
 		v = false
 		$"../Monster/Path2D/PathFollow2D".progress = 0
-		$Coins/AnimatedSprite2D.play("Coin")
-		$Hand_Kill.play("Kill")
+		$Coins/AnimatedSprite2D.play("N")
+		$Hand_Kill.play("N")
 		$"../Monster/Path2D/PathFollow2D/AnimatedSprite2D".play("new_animation")
 		$"../Third/Node2D".position.y = 10000
 		$"../Monster".position.y = 10000

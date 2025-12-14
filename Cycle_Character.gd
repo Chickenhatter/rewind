@@ -90,3 +90,37 @@ func _on_uub_body_entered(body: Node2D) -> void:
 
 func _on_huh_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
+
+
+func _on_fourent_body_entered(body: Node2D) -> void:
+	pass
+
+
+func _on_fourext_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		fall = false
+		fourway = true
+		four_speed = 300
+		twomove = false
+		twonfall = false
+		Nm = false
+
+
+func _on_thethingtofour_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		fall = false
+		fourway = true
+		four_speed = 300
+		twomove = false
+		twonfall = false
+		Nm = false
+
+
+func _on_camera_follower_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		fall = false
+		fourway = false
+		four_speed = 300
+		twomove = false
+		twonfall = true
+		Nm = false
